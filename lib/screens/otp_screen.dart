@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
+import 'package:onlearner/screens/Details_Page.dart';
 import 'package:onlearner/screens/home.dart';
 //import 'package:onlearner/screens/user_information_screen.dart';
 import 'package:onlearner/utils/utils.dart';
@@ -177,7 +178,7 @@ class _OtpScreenState extends State<OtpScreen> {
               Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const HomeScreen()),
+                      builder: (context) => const Detailspage()),
                       (route) => false);
             }
           },
