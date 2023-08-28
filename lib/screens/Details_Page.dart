@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:onlearner/screens/home.dart';
+import 'package:provider/provider.dart';
+
+import '../model/user_model.dart';
+import '../provider/auth_provider.dart';
+import '../utils/utils.dart';
 
 class Detailspage extends StatefulWidget {
   const Detailspage({Key? key}) : super(key: key);
@@ -13,6 +18,16 @@ class _DetailspageState extends State<Detailspage> {
   final TextEditingController Class = TextEditingController();
   final TextEditingController subject = TextEditingController();
   final TextEditingController Description = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    name.dispose();
+    Class.dispose();
+    subject.dispose();
+    Description.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     name.selection = TextSelection.fromPosition(
@@ -27,12 +42,12 @@ class _DetailspageState extends State<Detailspage> {
     );
     subject.selection=TextSelection.fromPosition(
       TextPosition(
-        offset: Class.text.length,
+        offset: subject.text.length,
       ),
     );
     Description.selection=TextSelection.fromPosition(
       TextPosition(
-        offset: Class.text.length,
+        offset: Description.text.length,
       ),
     );
     return Scaffold(
@@ -101,7 +116,8 @@ class _DetailspageState extends State<Detailspage> {
               padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
               child: TextFormField(
                 cursorColor: Colors.black,
-                controller: name,
+                controller: Class,
+                keyboardType: TextInputType.number,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -137,7 +153,8 @@ class _DetailspageState extends State<Detailspage> {
               padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
               child: TextFormField(
                 cursorColor: Colors.black,
-                controller: name,
+                keyboardType: TextInputType.text,
+                controller: subject,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -173,7 +190,8 @@ class _DetailspageState extends State<Detailspage> {
               padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
               child: TextFormField(
                   cursorColor: Colors.black,
-                  controller: name,
+                  controller: Description,
+                  keyboardType: TextInputType.text,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -209,12 +227,7 @@ class _DetailspageState extends State<Detailspage> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
-                  );
-                },
+                onTap: ()=>storeData(),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Color.fromRGBO(250, 201, 69, .83),
@@ -239,4 +252,33 @@ class _DetailspageState extends State<Detailspage> {
       ),
     );
   }
+  void storeData() async {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    UserModel userModel = UserModel(
+      name: name.text.trim(),
+      Class: Class.text.trim(),
+      description: Description.text.trim(),
+      Subject : subject.text.trim(),
+      createdAt: "",
+      phoneNumber: "",
+      uid: "",
+    );
+    ap.saveUserDataToFirebase(
+      context: context,
+      userModel: userModel,
+      onSuccess: () {
+        ap.saveUserDataToSP().then(
+              (value) => ap.setSignIn().then(
+                (value) => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+                    (route) => false),
+          ),
+        );
+      },
+    );
+  }
 }
+

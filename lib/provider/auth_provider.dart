@@ -19,12 +19,11 @@ class AuthProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? _uid;
   String get uid => _uid!;
-  //UserModel? _userModel;
-  //UserModel get userModel => _userModel!;
+  UserModel? _userModel;
+  UserModel get userModel => _userModel!;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-  //final FirebaseStorage _firebaseStorage = FirebaseStorage.instance;
 
   AuthProvider() {
     checkSign();
@@ -36,12 +35,12 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /*Future setSignIn() async {
+  Future setSignIn() async {
     final SharedPreferences s = await SharedPreferences.getInstance();
     s.setBool("is_signedin", true);
     _isSignedIn = true;
     notifyListeners();
-  }*/
+  }
 
   // signin
   void signInWithPhone(BuildContext context, String phoneNumber) async {
@@ -80,6 +79,7 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
+
       PhoneAuthCredential creds = PhoneAuthProvider.credential(
           verificationId: verificationId, smsCode: userOtp);
 
@@ -112,25 +112,18 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  /*void saveUserDataToFirebase({
+  void saveUserDataToFirebase({
     required BuildContext context,
     required UserModel userModel,
-    required File profilePic,
     required Function onSuccess,
   }) async {
     _isLoading = true;
     notifyListeners();
+    userModel.createdAt = DateTime.now().millisecondsSinceEpoch.toString();
+    userModel.phoneNumber = _firebaseAuth.currentUser!.phoneNumber!;
+    userModel.uid = _firebaseAuth.currentUser!.phoneNumber!;
     try {
-      // uploading image to firebase storage.
-      await storeFileToStorage("profilePic/$_uid", profilePic).then((value) {
-        userModel.profilePic = value;
-        userModel.createdAt = DateTime.now().millisecondsSinceEpoch.toString();
-        userModel.phoneNumber = _firebaseAuth.currentUser!.phoneNumber!;
-        userModel.uid = _firebaseAuth.currentUser!.phoneNumber!;
-      });
       _userModel = userModel;
-
-      // uploading to database
       await _firebaseFirestore
           .collection("users")
           .doc(_uid)
@@ -147,13 +140,6 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  Future<String> storeFileToStorage(String ref, File file) async {
-    UploadTask uploadTask = _firebaseStorage.ref().child(ref).putFile(file);
-    TaskSnapshot snapshot = await uploadTask;
-    String downloadUrl = await snapshot.ref.getDownloadURL();
-    return downloadUrl;
-  }
-
   Future getDataFromFirestore() async {
     await _firebaseFirestore
         .collection("users")
@@ -162,11 +148,11 @@ class AuthProvider extends ChangeNotifier {
         .then((DocumentSnapshot snapshot) {
       _userModel = UserModel(
         name: snapshot['name'],
-        email: snapshot['email'],
+        Class: snapshot['Class'],
         createdAt: snapshot['createdAt'],
-        bio: snapshot['bio'],
+        description: snapshot['description'],
         uid: snapshot['uid'],
-        profilePic: snapshot['profilePic'],
+        Subject: snapshot['subject'],
         phoneNumber: snapshot['phoneNumber'],
       );
       _uid = userModel.uid;
@@ -193,5 +179,5 @@ class AuthProvider extends ChangeNotifier {
     _isSignedIn = false;
     notifyListeners();
     s.clear();
-  }*/
+  }
 }

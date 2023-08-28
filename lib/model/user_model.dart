@@ -1,17 +1,17 @@
 class UserModel {
   String name;
-  String email;
-  String bio;
-  String profilePic;
+  String Class;
+  String description;
+  String Subject;
   String createdAt;
   String phoneNumber;
   String uid;
 
   UserModel({
     required this.name,
-    required this.email,
-    required this.bio,
-    required this.profilePic,
+    required this.Class,
+    required this.description,
+    required this.Subject,
     required this.createdAt,
     required this.phoneNumber,
     required this.uid,
@@ -21,12 +21,12 @@ class UserModel {
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       name: map['name'] ?? '',
-      email: map['email'] ?? '',
-      bio: map['bio'] ?? '',
+      Class: map['Class'] ?? '',
+      description: map['description'] ?? '',
       uid: map['uid'] ?? '',
       phoneNumber: map['phoneNumber'] ?? '',
       createdAt: map['createdAt'] ?? '',
-      profilePic: map['profilePic'] ?? '',
+      Subject: map['subject'] ?? '',
     );
   }
 
@@ -34,10 +34,10 @@ class UserModel {
   Map<String, dynamic> toMap() {
     return {
       "name": name,
-      "email": email,
+      "description": description,
       "uid": uid,
-      "bio": bio,
-      "profilePic": profilePic,
+      "Class": Class,
+      "subject": Subject,
       "phoneNumber": phoneNumber,
       "createdAt": createdAt,
     };

@@ -50,10 +50,10 @@ class _OtpScreenState extends State<OtpScreen> {
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.purple.shade50,
+                    color: Colors.white,
                   ),
                   child: Image.asset(
-                    "assets/image2.png",
+                    "images/onlearner_whitelogo.png",
                   ),
                 ),
                 const SizedBox(height: 20),
