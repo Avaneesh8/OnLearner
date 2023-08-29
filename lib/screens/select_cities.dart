@@ -96,7 +96,7 @@ class _SelectCitiesState extends State<SelectCities> {
                       child: Padding(
                         padding: const EdgeInsets.all(35),
                         child: GestureDetector(
-                          onTap: (){},
+                          
                           child: Container(
                             width: .35*MediaQuery.of(context).size.width,
                             height: .15*MediaQuery.of(context).size.height,
