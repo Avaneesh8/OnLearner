@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
+import 'package:onlearner/screens/WelcomeScreen.dart';
 import 'package:onlearner/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: WelcomeScreen(),
     );
   }
 }
