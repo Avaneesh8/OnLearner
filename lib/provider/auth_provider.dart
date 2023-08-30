@@ -154,6 +154,8 @@ class AuthProvider extends ChangeNotifier {
         uid: snapshot['uid'],
         Subject: snapshot['subject'],
         phoneNumber: snapshot['phoneNumber'],
+        city: snapshot['city'],
+        profession: snapshot['profession'],
       );
       _uid = userModel.uid;
     });

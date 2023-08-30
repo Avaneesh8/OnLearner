@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'Details_Page.dart';
+
 class SelectCities extends StatefulWidget {
-  const SelectCities({Key? key}) : super(key: key);
+  final String profession;
+  const SelectCities({required this.profession});
 
   @override
   State<SelectCities> createState() => _SelectCitiesState();
@@ -96,7 +99,14 @@ class _SelectCitiesState extends State<SelectCities> {
                       child: Padding(
                         padding: const EdgeInsets.all(35),
                         child: GestureDetector(
-                          
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Detailspage(city: '${items[index].title}',profession: widget.profession,),),
+                            );
+
+                          },
+
                           child: Container(
                             width: .35*MediaQuery.of(context).size.width,
                             height: .15*MediaQuery.of(context).size.height,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
 import 'package:onlearner/screens/Details_Page.dart';
 import 'package:onlearner/screens/home.dart';
+import 'package:onlearner/screens/profession_selection.dart';
+import 'package:onlearner/screens/select_cities.dart';
 //import 'package:onlearner/screens/user_information_screen.dart';
 import 'package:onlearner/utils/utils.dart';
 import 'package:onlearner/widgets/custom_button.dart';
@@ -215,7 +217,7 @@ class _OtpScreenState extends State<OtpScreen> {
               // new user
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const Detailspage()),
+                  MaterialPageRoute(builder: (context) => const ProfessionSelection()),
                   (route) => false);
             }
           },

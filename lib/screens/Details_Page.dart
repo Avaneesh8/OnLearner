@@ -7,7 +7,10 @@ import '../provider/auth_provider.dart';
 import '../utils/utils.dart';
 
 class Detailspage extends StatefulWidget {
-  const Detailspage({Key? key}) : super(key: key);
+  final String city;
+  final String profession;
+  const Detailspage({required this.city,required this.profession});
+
 
   @override
   State<Detailspage> createState() => _DetailspageState();
@@ -262,6 +265,8 @@ class _DetailspageState extends State<Detailspage> {
       createdAt: "",
       phoneNumber: "",
       uid: "",
+      city :widget.city.trim(),
+      profession: widget.profession.trim(),
     );
     ap.saveUserDataToFirebase(
       context: context,
