@@ -115,7 +115,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ),

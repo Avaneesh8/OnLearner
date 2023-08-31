@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
-import 'package:onlearner/screens/Details_Page.dart';
+import 'package:onlearner/screens/Authentication/Details_Page.dart';
 import 'package:onlearner/screens/home.dart';
 import 'package:onlearner/screens/Authentication/profession_selection.dart';
 import 'package:onlearner/screens/Authentication/select_cities.dart';

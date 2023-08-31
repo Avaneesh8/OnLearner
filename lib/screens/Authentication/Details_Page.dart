@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:onlearner/screens/home.dart';
 import 'package:provider/provider.dart';
 
-import '../model/user_model.dart';
-import '../provider/auth_provider.dart';
-import '../utils/utils.dart';
+import '../../model/user_model.dart';
+import '../../provider/auth_provider.dart';
+import '../../utils/utils.dart';
 
 class Detailspage extends StatefulWidget {
   final String city;

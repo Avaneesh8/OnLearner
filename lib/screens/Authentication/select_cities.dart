@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Details_Page.dart';
+import 'Details_Page.dart';
 
 class SelectCities extends StatefulWidget {
   final String profession;
