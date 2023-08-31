@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:onlearner/model/user_model.dart';
-import 'package:onlearner/screens/otp_screen.dart';
+import 'package:onlearner/screens/Authentication/otp_screen.dart';
 //import 'package:onlearner/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

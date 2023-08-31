@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
 import 'package:onlearner/screens/Details_Page.dart';
 import 'package:onlearner/screens/home.dart';
-import 'package:onlearner/screens/profession_selection.dart';
-import 'package:onlearner/screens/select_cities.dart';
+import 'package:onlearner/screens/Authentication/profession_selection.dart';
+import 'package:onlearner/screens/Authentication/select_cities.dart';
 //import 'package:onlearner/screens/user_information_screen.dart';
 import 'package:onlearner/utils/utils.dart';
 import 'package:onlearner/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+
+import '../Profile.dart';
 
 class OtpScreen extends StatefulWidget {
   final String verificationId;
@@ -23,6 +25,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
@@ -207,7 +210,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                 (value) => Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const HomeScreen(),
+                                      builder: (context) => const Profile(),
                                     ),
                                     (route) => false),
                               ),

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:onlearner/screens/MinimalistLogin.dart';
+import 'package:onlearner/screens/WelcomeScreen.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/auth_provider.dart';
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => MinimalistLogin()),
+            MaterialPageRoute(builder: (context) => WelcomeScreen()),
           );
         }
       },

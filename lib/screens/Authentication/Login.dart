@@ -1,9 +1,9 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:onlearner/screens/SignUp.dart';
+import 'package:onlearner/screens/Authentication/otp_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/auth_provider.dart';
+import '../../provider/auth_provider.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -47,7 +47,6 @@ class _LoginState extends State<Login> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 35,bottom: 30),
-
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -182,13 +181,7 @@ class _LoginState extends State<Login> {
 
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignUp()),
-                  );
-                },
+
                 child: GestureDetector(
                   onTap: ()=>sendPhoneNumber(),
                   child: Container(
@@ -210,8 +203,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-            ),
-            Padding(
+
+            /*Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
                 onTap: () {
@@ -231,7 +224,7 @@ class _LoginState extends State<Login> {
                       )),
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

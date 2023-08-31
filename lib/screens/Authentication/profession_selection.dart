@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlearner/screens/select_cities.dart';
+import 'package:onlearner/screens/Authentication/select_cities.dart';
 
 class ProfessionSelection extends StatefulWidget {
   const ProfessionSelection({Key? key}) : super(key: key);
