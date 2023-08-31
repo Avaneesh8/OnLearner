@@ -29,8 +29,7 @@ class _LoginState extends State<Login> {
     displayNameNoCountryCode: "IN",
     e164Key: "",
   );
-  
-  
+
   @override
   Widget build(BuildContext context) {
     phoneController.selection = TextSelection.fromPosition(
@@ -43,10 +42,10 @@ class _LoginState extends State<Login> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height*.12,
+              height: MediaQuery.of(context).size.height * .12,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 35,bottom: 30),
+              padding: const EdgeInsets.only(left: 35, bottom: 30),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -63,11 +62,11 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 35,bottom: 10),
+              padding: const EdgeInsets.only(left: 35, bottom: 10),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Container(
-                  width: MediaQuery.of(context).size.width*.55,
+                  width: MediaQuery.of(context).size.width * .55,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
@@ -161,70 +160,46 @@ class _LoginState extends State<Login> {
                   ),
                   suffixIcon: phoneController.text.length > 9
                       ? Container(
-                    height: 30,
-                    width: 30,
-                    margin: const EdgeInsets.all(10.0),
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.green,
-                    ),
-                    child: const Icon(
-                      Icons.done,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                  )
+                          height: 30,
+                          width: 30,
+                          margin: const EdgeInsets.all(10.0),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.green,
+                          ),
+                          child: const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        )
                       : null,
                 ),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(15.0),
-
-                child: GestureDetector(
-                  onTap: ()=>sendPhoneNumber(),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(250, 201, 69, .83),
-                        border: Border.all(
-                          color: Color(0xFAC945),
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                    constraints: BoxConstraints(
-                        minWidth: 200,
-                        maxWidth: .5 * MediaQuery.of(context).size.width),
-                    height: 50,
-                    child: Center(
-                        child: Text(
-                          "Proceed",
-                          style: TextStyle(color: Colors.white, fontSize: 25),
-                        )),
-                  ),
-                ),
-              ),
-
-            /*Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignUp()),
-                  );
-                },
+              child: InkWell(
+                onTap: () => sendPhoneNumber(),
                 child: Container(
-                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(250, 201, 69, .83),
+                      border: Border.all(
+                        color: Color(0xFAC945),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  constraints: BoxConstraints(
+                      minWidth: 200,
+                      maxWidth: .5 * MediaQuery.of(context).size.width),
                   height: 50,
                   child: Center(
                       child: Text(
-                        "Not signed up yet? Tap here to sign up.",
-                        style: TextStyle(color: Colors.black, fontSize: 20,fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w400,),
-                      )),
+                    "Proceed",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  )),
                 ),
               ),
-            ),*/
+            ),
           ],
         ),
       ),
@@ -236,5 +211,4 @@ class _LoginState extends State<Login> {
     String phoneNumber = phoneController.text.trim();
     ap.signInWithPhone(context, "+${selectedCountry.phoneCode}$phoneNumber");
   }
-
 }

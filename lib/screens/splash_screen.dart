@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image(width: 250, image: AssetImage('images/onlearner_logo.png')),
+              Image(width: 250, image: AssetImage('images/onlearner_whitelogo.png')),
               Text(
                 "OnLearner",
                 style: TextStyle(

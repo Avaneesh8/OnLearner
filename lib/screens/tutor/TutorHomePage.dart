@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:onlearner/screens/DownloadNotes.dart';
+import 'package:onlearner/screens/HomeTutor.dart';
+import 'package:onlearner/screens/tutor/Upload_Notes.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/auth_provider.dart';
+import '../../widgets/HomeButton.dart';
+import '../Profile.dart';
+
+class HomeScreenTutor extends StatefulWidget {
+  const HomeScreenTutor({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreenTutor> createState() => _HomeScreenTutorState();
+}
+
+class _HomeScreenTutorState extends State<HomeScreenTutor> {
+  @override
+  Widget build(BuildContext context) {
+
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF34B89B),
+        title: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .1,
+                ),
+                const Text("Home"),
+              ],
+            )),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+            },
+            icon: const Icon(Icons.person),
+          ),
+        ],
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .1,
+                ),
+                Image.asset(
+                  "images/onlearner_whitelogo.png",
+                  height: 150,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .05,
+                ),
+                HomeButton(text: 'Home Tutor', onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomeTutor()),
+                  );
+                },),
+                HomeButton(text: 'Upload Notes', onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => UploadNotes()),
+                  );
+                },),
+                HomeButton(text: 'Download Notes', onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DownloadNotes()),
+                  );
+                },),
+              ]),
+        ),
+      ),
+    );
+  }
+}

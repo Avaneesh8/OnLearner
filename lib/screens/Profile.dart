@@ -26,14 +26,14 @@ class _ProfileState extends State<Profile> {
             onPressed: () {
               ap.userSignOut().then(
                     (value) => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    ),
-                  );
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen(),
+                  ),
+                ),
+              );
             },
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),

@@ -51,7 +51,7 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 23,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                       height: 1.63,
@@ -89,7 +89,7 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 23,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                       height: 1.63,

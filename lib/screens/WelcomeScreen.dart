@@ -34,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       children: [
                         Image.asset(
                           "images/onlearner_whitelogo.png",
-                          height: 300,
+                          height: 270,
                         ),
                         const SizedBox(height: 20),
                         const Text(
@@ -86,7 +86,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
+                  bottom: 20,
                   left: 0,
                   right: 0,
                   child: Column(

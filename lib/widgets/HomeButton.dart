@@ -9,7 +9,7 @@ class HomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.only(top: 25,bottom: 25),
       child: GestureDetector(
         onTap: onPressed,
         child: Container(
@@ -26,7 +26,7 @@ class HomeButton extends StatelessWidget {
           child: Center(
               child: Text(
                 text,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(color: Colors.white, fontSize: 20),
               )),
         ),
       ),

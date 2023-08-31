@@ -6,6 +6,7 @@ import 'package:onlearner/screens/WelcomeScreen.dart';
 import 'package:onlearner/screens/Authentication/profession_selection.dart';
 import 'package:onlearner/screens/Authentication/select_cities.dart';
 import 'package:onlearner/screens/splash_screen.dart';
+import 'package:onlearner/screens/tutor/Upload_Notes.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      home: WelcomeScreen(),//WelcomeScreen(),
     );
   }
 }
