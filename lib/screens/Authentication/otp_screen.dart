@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
-import 'package:onlearner/screens/Authentication/Details_Page.dart';
 import 'package:onlearner/screens/home.dart';
 import 'package:onlearner/screens/Authentication/profession_selection.dart';
-import 'package:onlearner/screens/Authentication/select_cities.dart';
-//import 'package:onlearner/screens/user_information_screen.dart';
 import 'package:onlearner/utils/utils.dart';
 import 'package:onlearner/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 
-import '../Profile.dart';
-
 class OtpScreen extends StatefulWidget {
   final String verificationId;
-  const OtpScreen({super.key, required this.verificationId});
+  final String number;
+  const OtpScreen({super.key, required this.verificationId,required this.number});
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -25,9 +21,9 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
+
     return Scaffold(
       body: SafeArea(
         child: isLoading == true
@@ -38,6 +34,7 @@ class _OtpScreenState extends State<OtpScreen> {
               )
             : SingleChildScrollView(
                 child: Container(
+                  height: MediaQuery.of(context).size.height,
                   color: Colors.white,
                   child: Center(
                     child: Padding(
@@ -48,9 +45,9 @@ class _OtpScreenState extends State<OtpScreen> {
                           SizedBox(
                             height: MediaQuery.of(context).size.height * .08,
                           ),
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.only(left: 35, bottom: 30),
+                                EdgeInsets.only(left: 35, bottom: 30),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Text(
@@ -73,7 +70,7 @@ class _OtpScreenState extends State<OtpScreen> {
                               alignment: Alignment.topLeft,
                               child: Container(
                                 width: MediaQuery.of(context).size.width * .45,
-                                decoration: ShapeDecoration(
+                                decoration: const ShapeDecoration(
                                   shape: RoundedRectangleBorder(
                                     side: BorderSide(
                                       width: 1,
@@ -89,7 +86,7 @@ class _OtpScreenState extends State<OtpScreen> {
                             width: 200,
                             height: 200,
                             padding: const EdgeInsets.all(20.0),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors.white,
                             ),
@@ -124,17 +121,17 @@ class _OtpScreenState extends State<OtpScreen> {
                               height: 60,
                               decoration: BoxDecoration(
                                 boxShadow: [
-                                  BoxShadow(
+                                  const BoxShadow(
                                     color: Color(0x3F000000),
                                     blurRadius: 4,
                                     offset: Offset(0, 4),
                                     spreadRadius: 0, // Shadow offset
                                   ),
                                 ],
-                                color: Color(0xFFCEE5D0),
+                                color: const Color(0xFFCEE5D0),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
-                                  color: Color(0xFFCEE5D0),
+                                  color: const Color(0xFFCEE5D0),
                                 ),
                               ),
                               textStyle: const TextStyle(
@@ -173,12 +170,17 @@ class _OtpScreenState extends State<OtpScreen> {
                             ),
                           ),
                           const SizedBox(height: 15),
-                          const Text(
-                            "Resend New Code",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(250, 201, 69, .83),
+                          InkWell(
+                            onTap: () {
+                              sendPhoneNumber();
+                            },
+                            child: const Text(
+                              "Resend New Code",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromRGBO(250, 201, 69, .83),
+                              ),
                             ),
                           ),
                         ],
@@ -228,4 +230,9 @@ class _OtpScreenState extends State<OtpScreen> {
       },
     );
   }
+  void sendPhoneNumber() {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    ap.signInWithPhone2(context, widget.number);
+  }
 }
+

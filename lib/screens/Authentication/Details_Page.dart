@@ -1,15 +1,15 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:onlearner/screens/home.dart';
 import 'package:provider/provider.dart';
-
 import '../../model/user_model.dart';
 import '../../provider/auth_provider.dart';
-import '../../utils/utils.dart';
 
 class Detailspage extends StatefulWidget {
   final String city;
   final String profession;
-  const Detailspage({required this.city,required this.profession});
+  const Detailspage({super.key, required this.city,required this.profession});
 
 
   @override
@@ -63,7 +63,7 @@ class _DetailspageState extends State<Detailspage> {
             SizedBox(
               width: .75 * MediaQuery.of(context).size.width,
               height: .1 * MediaQuery.of(context).size.height,
-              child: FittedBox(
+              child: const FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   'Details Page',
@@ -95,7 +95,7 @@ class _DetailspageState extends State<Detailspage> {
                 },
                 decoration: InputDecoration(
                   hintText: "Name",
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
                     fontFamily: 'Poppins',
@@ -131,8 +131,8 @@ class _DetailspageState extends State<Detailspage> {
                   });
                 },
                 decoration: InputDecoration(
-                  hintText: "Classes",
-                  hintStyle: TextStyle(
+                  hintText: widget.profession=='Tutor'?"Will be Teaching in Class":"class",
+                  hintStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
                     fontFamily: 'Poppins',
@@ -169,7 +169,7 @@ class _DetailspageState extends State<Detailspage> {
                 },
                 decoration: InputDecoration(
                   hintText: "Subject",
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
                     fontFamily: 'Poppins',
@@ -207,7 +207,7 @@ class _DetailspageState extends State<Detailspage> {
                 maxLines: 7,
                   decoration: InputDecoration(
                     hintText: "Description",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
                       fontFamily: 'Poppins',
@@ -233,16 +233,16 @@ class _DetailspageState extends State<Detailspage> {
                 onTap: ()=>storeData(),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(250, 201, 69, .83),
+                      color: const Color.fromRGBO(250, 201, 69, .83),
                       border: Border.all(
-                        color: Color(0xFAC945),
+                        color: const Color(0xFAC945),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                      borderRadius: const BorderRadius.all(Radius.circular(25))),
                   constraints: BoxConstraints(
                       minWidth: 200,
                       maxWidth: .5 * MediaQuery.of(context).size.width),
                   height: 50,
-                  child: Center(
+                  child: const Center(
                       child: Text(
                         "Proceed",
                         style: TextStyle(color: Colors.white, fontSize: 25),

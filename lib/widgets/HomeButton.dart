@@ -14,11 +14,11 @@ class HomeButton extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           decoration: BoxDecoration(
-              color: Color.fromRGBO(250, 201, 69, .83),
+              color: const Color.fromRGBO(250, 201, 69, .83),
               border: Border.all(
-                color: Color(0xFAC945),
+                color: const Color(0xFAC945),
               ),
-              borderRadius: BorderRadius.all(Radius.circular(25))),
+              borderRadius: const BorderRadius.all(Radius.circular(25))),
           constraints: BoxConstraints(
               minWidth: 200,
               maxWidth: .5 * MediaQuery.of(context).size.width),
@@ -26,7 +26,7 @@ class HomeButton extends StatelessWidget {
           child: Center(
               child: Text(
                 text,
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: const TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),
               )),
         ),
       ),

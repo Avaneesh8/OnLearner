@@ -29,9 +29,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height*.1,
+                        ),
+                        Text(
+                          'ONLearner',
+                          style: TextStyle(
+                            color: Color.fromRGBO(161, 128, 48, 1),
+                            fontSize: 35,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height*.075,
+                        ),
                         Image.asset(
                           "images/onlearner_whitelogo.png",
                           height: 270,
@@ -95,7 +110,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Created by',
                             style: TextStyle(
                               fontSize: 20,

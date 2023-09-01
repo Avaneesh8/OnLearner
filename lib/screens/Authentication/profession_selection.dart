@@ -15,7 +15,7 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF34B89B),
         ),
         child: Column(
@@ -27,13 +27,13 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          SelectCities(profession: 'Student')),
+                          const SelectCities(profession: 'Student')),
                 );
               },
               child: Container(
                 width: .5 * MediaQuery.of(context).size.width,
                 height: .25 * MediaQuery.of(context).size.height,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xD3FAC944),
                   shape: CircleBorder(),
                   shadows: [
@@ -45,7 +45,7 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                     )
                   ],
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Student',
                     textAlign: TextAlign.center,
@@ -65,13 +65,13 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => SelectCities(profession: 'Tutor')),
+                      builder: (context) => const SelectCities(profession: 'Tutor')),
                 );
               },
               child: Container(
                 width: .5 * MediaQuery.of(context).size.width,
                 height: .25 * MediaQuery.of(context).size.height,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xD3FAC944),
                   shape: CircleBorder(),
                   shadows: [
@@ -83,7 +83,7 @@ class _ProfessionSelectionState extends State<ProfessionSelection> {
                     )
                   ],
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Tutor',
                     textAlign: TextAlign.center,

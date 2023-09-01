@@ -16,18 +16,18 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
           () {
         final ap = Provider.of<AuthProvider>(context, listen: false);
         if (ap.isSignedIn) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen()),
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
           );
         } else {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => WelcomeScreen()),
+            MaterialPageRoute(builder: (context) => const WelcomeScreen()),
           );
         }
       },
@@ -42,10 +42,10 @@ class _SplashScreenState extends State<SplashScreen> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           alignment: Alignment.center,
-          color: Color.fromRGBO(52, 184, 155, 1),
+          color: const Color.fromRGBO(52, 184, 155, 1),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Image(width: 250, image: AssetImage('images/onlearner_whitelogo.png')),
               Text(
                 "OnLearner",

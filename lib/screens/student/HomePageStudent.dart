@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../../provider/auth_provider.dart';
 import '../../widgets/HomeButton.dart';
+import '../DownloadNotes.dart';
+import 'HomeTutor.dart';
 import '../Profile.dart';
 
 class HomeScreenStudent extends StatefulWidget {
@@ -19,7 +21,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
     final ap = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF34B89B),
+        backgroundColor: const Color(0xFF34B89B),
         title: Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +37,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Profile()),
+                MaterialPageRoute(builder: (context) => const Profile()),
               );
             },
             icon: const Icon(Icons.person),
@@ -43,7 +45,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
         ),
         child: Center(
@@ -58,10 +60,34 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                   height: 150,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .13,
+                  height: MediaQuery.of(context).size.height * .03,
                 ),
-                HomeButton(text: 'Home Tutor', onPressed: () {}),
-                HomeButton(text: 'Download Notes', onPressed: () {}),
+                Text(
+                  'ONLearner',
+                  style: TextStyle(
+                    color: Color.fromRGBO(161, 128, 48, 1),
+                    fontSize: 35,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .08,
+                ),
+                HomeButton(text: 'Home Tutor', onPressed: ()  {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeTutor()),
+                  );
+                },),
+                HomeButton(text: 'Download Notes', onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DownloadNotes()),
+                  );
+                },),
               ]),
         ),
       ),

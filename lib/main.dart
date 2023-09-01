@@ -1,12 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
-import 'package:onlearner/screens/Profile.dart';
 import 'package:onlearner/screens/WelcomeScreen.dart';
-import 'package:onlearner/screens/Authentication/profession_selection.dart';
-import 'package:onlearner/screens/Authentication/select_cities.dart';
-import 'package:onlearner/screens/splash_screen.dart';
-import 'package:onlearner/screens/tutor/Upload_Notes.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -32,7 +27,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),//WelcomeScreen(),
+      home: const WelcomeScreen(),//WelcomeScreen(),
     );
   }
 }

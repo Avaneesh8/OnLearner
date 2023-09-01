@@ -37,8 +37,8 @@ class _SelectCitiesState extends State<SelectCities> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .12,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35, bottom: 30),
+            const Padding(
+              padding: EdgeInsets.only(left: 35, bottom: 30),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -60,7 +60,7 @@ class _SelectCitiesState extends State<SelectCities> {
                 alignment: Alignment.topLeft,
                 child: Container(
                   width: MediaQuery.of(context).size.width * .65,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -80,7 +80,7 @@ class _SelectCitiesState extends State<SelectCities> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xFF34B89B),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
@@ -90,7 +90,7 @@ class _SelectCitiesState extends State<SelectCities> {
                   ),
                 ),
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                   ),
                   itemCount: items.length,
@@ -102,7 +102,7 @@ class _SelectCitiesState extends State<SelectCities> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Detailspage(city: '${items[index].title}',profession: widget.profession,),),
+                              MaterialPageRoute(builder: (context) => Detailspage(city: items[index].title,profession: widget.profession,),),
                             );
 
                           },
@@ -110,7 +110,7 @@ class _SelectCitiesState extends State<SelectCities> {
                           child: Container(
                             width: .35*MediaQuery.of(context).size.width,
                             height: .15*MediaQuery.of(context).size.height,
-                            decoration: ShapeDecoration(
+                            decoration: const ShapeDecoration(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
@@ -129,10 +129,10 @@ class _SelectCitiesState extends State<SelectCities> {
                                   width: .2*MediaQuery.of(context).size.width,
                                   height: .1*MediaQuery.of(context).size.height,
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Text(
                                   items[index].title,
-                                  style: TextStyle(color: Color(0xFFA17F2F),fontSize: 15,),
+                                  style: const TextStyle(color: Color(0xFFA17F2F),fontSize: 15,),
 
                                 ),
                               ],

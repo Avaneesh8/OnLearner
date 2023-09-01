@@ -1,8 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:onlearner/screens/Authentication/otp_screen.dart';
 import 'package:provider/provider.dart';
-
 import '../../provider/auth_provider.dart';
 
 class Login extends StatefulWidget {
@@ -44,49 +42,31 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: MediaQuery.of(context).size.height * .12,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35, bottom: 30),
+            const Padding(
+              padding: EdgeInsets.only(left: 0, bottom: 30),
               child: Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 child: Text(
-                  'Welcome\n Back!',
+                  'Welcome!!',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Color(0xFF34B89B),
-                    fontSize: 45,
+                    fontSize: 55,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     height: 1.63,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35, bottom: 10),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .55,
-                  decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        width: 1,
-                        strokeAlign: BorderSide.strokeAlignCenter,
-                        color: Color(0xFFC4C4C4),
-                      ),
-                    ),
                   ),
                 ),
               ),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: .075 * MediaQuery.of(context).size.height,
+              height: .1 * MediaQuery.of(context).size.height,
             ),
             SizedBox(
               width: .25 * MediaQuery.of(context).size.width,
               height: .1 * MediaQuery.of(context).size.height,
-              child: FittedBox(
+              child: const FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   'Login',
@@ -116,7 +96,7 @@ class _LoginState extends State<Login> {
                 },
                 decoration: InputDecoration(
                   hintText: "Enter phone number",
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
                     fontFamily: 'Poppins',
@@ -178,24 +158,24 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(25.0),
               child: InkWell(
                 onTap: () => sendPhoneNumber(),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(250, 201, 69, .83),
+                      color: const Color.fromRGBO(250, 201, 69, .83),
                       border: Border.all(
-                        color: Color(0xFAC945),
+                        color: const Color(0xFAC945),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                      borderRadius: const BorderRadius.all(Radius.circular(25))),
                   constraints: BoxConstraints(
                       minWidth: 200,
                       maxWidth: .5 * MediaQuery.of(context).size.width),
                   height: 50,
-                  child: Center(
+                  child: const Center(
                       child: Text(
                     "Proceed",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: Colors.white, fontSize: 25,fontWeight: FontWeight.bold),
                   )),
                 ),
               ),

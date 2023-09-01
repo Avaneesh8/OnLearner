@@ -10,8 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false);
-    return ap.userModel.profession == 'Tutor'
-        ? HomeScreenStudent()
-        :HomeScreenTutor();
+    return ap.userModel.profession == 'Student'
+        ? const HomeScreenStudent()
+        :const HomeScreenTutor();
   }
 }

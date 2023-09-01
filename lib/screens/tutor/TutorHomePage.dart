@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlearner/screens/DownloadNotes.dart';
-import 'package:onlearner/screens/HomeTutor.dart';
 import 'package:onlearner/screens/tutor/Upload_Notes.dart';
-import 'package:provider/provider.dart';
-
-import '../../provider/auth_provider.dart';
 import '../../widgets/HomeButton.dart';
 import '../Profile.dart';
 
@@ -19,10 +15,9 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
   @override
   Widget build(BuildContext context) {
 
-    final ap = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF34B89B),
+        backgroundColor: const Color(0xFF34B89B),
         title: Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +33,7 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Profile()),
+                MaterialPageRoute(builder: (context) => const Profile()),
               );
             },
             icon: const Icon(Icons.person),
@@ -46,7 +41,7 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
         ),
         child: Center(
@@ -54,22 +49,27 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .1,
+                  height: MediaQuery.of(context).size.height * .12,
                 ),
                 Image.asset(
                   "images/onlearner_whitelogo.png",
                   height: 150,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .05,
+                  height: MediaQuery.of(context).size.height * .03,
                 ),
-                HomeButton(text: 'Home Tutor', onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => HomeTutor()),
-                  );
-                },),
+                Text(
+                  'ONLearner',
+                  style: TextStyle(
+                    color: Color.fromRGBO(161, 128, 48, 1),
+                    fontSize: 35,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .08,
+                ),
                 HomeButton(text: 'Upload Notes', onPressed: () {
                   Navigator.push(
                     context,
@@ -81,7 +81,7 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DownloadNotes()),
+                        builder: (context) => const DownloadNotes()),
                   );
                 },),
               ]),
