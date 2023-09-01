@@ -1,6 +1,6 @@
 # onlearner
 
-A new Flutter project.
+Professionally designed an authentication-driven application, enabling user validation and personalized data entry aligned with respective professions. Implemented features for student access to educational notes and seamless connection 
 
 ## Getting Started
 
