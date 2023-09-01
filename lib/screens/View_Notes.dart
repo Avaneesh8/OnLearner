@@ -1,7 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_pdf_viewer/easy_pdf_viewer.dart';
 import 'package:flutter/material.dart';
-import 'DownloadNotes.dart';
 import 'Profile.dart';
 
 class ViewNotes extends StatefulWidget {
@@ -129,7 +130,7 @@ class _PDFViewerScreenState extends State<PDFViewerScreen> {
             ? PDFViewer(
                 document: document!,
               )
-            : Center(
+            : const Center(
                 child: CircularProgressIndicator(),
               ));
   }

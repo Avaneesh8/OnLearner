@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// ignore_for_file: file_names
 
-import '../../provider/auth_provider.dart';
+import 'package:flutter/material.dart';
+
 import '../../widgets/HomeButton.dart';
 import '../DownloadNotes.dart';
 import 'HomeTutor.dart';
@@ -18,7 +18,6 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
 
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF34B89B),
@@ -62,7 +61,7 @@ class _HomeScreenStudentState extends State<HomeScreenStudent> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .03,
                 ),
-                Text(
+                const Text(
                   'ONLearner',
                   style: TextStyle(
                     color: Color.fromRGBO(161, 128, 48, 1),

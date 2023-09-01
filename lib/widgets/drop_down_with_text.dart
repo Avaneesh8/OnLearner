@@ -6,7 +6,7 @@ class DropdownWithText extends StatelessWidget {
   final String labelText;
   final Function(String?) onChanged; // Change parameter type here
 
-  const DropdownWithText({
+  const DropdownWithText({super.key,
     required this.selectedValue,
     required this.options,
     required this.labelText,

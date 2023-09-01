@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:onlearner/screens/DownloadNotes.dart';
 import 'package:onlearner/screens/tutor/Upload_Notes.dart';
@@ -58,7 +60,7 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .03,
                 ),
-                Text(
+                const Text(
                   'ONLearner',
                   style: TextStyle(
                     color: Color.fromRGBO(161, 128, 48, 1),
@@ -74,7 +76,7 @@ class _HomeScreenTutorState extends State<HomeScreenTutor> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => UploadNotes()),
+                        builder: (context) => const UploadNotes()),
                   );
                 },),
                 HomeButton(text: 'Download Notes', onPressed: () {

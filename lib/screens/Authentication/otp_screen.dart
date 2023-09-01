@@ -120,8 +120,8 @@ class _OtpScreenState extends State<OtpScreen> {
                               width: 60,
                               height: 60,
                               decoration: BoxDecoration(
-                                boxShadow: [
-                                  const BoxShadow(
+                                boxShadow: const [
+                                  BoxShadow(
                                     color: Color(0x3F000000),
                                     blurRadius: 4,
                                     offset: Offset(0, 4),

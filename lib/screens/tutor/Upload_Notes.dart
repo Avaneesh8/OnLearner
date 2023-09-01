@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
@@ -8,6 +10,8 @@ import '../../widgets/drop_down_with_text.dart';
 import '../Profile.dart';
 
 class UploadNotes extends StatefulWidget {
+  const UploadNotes({super.key});
+
   @override
   _UploadNotes createState() => _UploadNotes();
 }
@@ -195,7 +199,7 @@ class _UploadNotes extends State<UploadNotes> {
               child: ElevatedButton(
                 onPressed: pickFile,
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromRGBO(250, 201, 69, .83),
+                  backgroundColor: const Color.fromRGBO(250, 201, 69, .83),
                   padding: const EdgeInsets.all(16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35),

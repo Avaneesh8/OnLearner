@@ -1,8 +1,8 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '../../provider/auth_provider.dart';
 import '../Profile.dart';
 

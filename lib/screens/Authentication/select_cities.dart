@@ -4,7 +4,7 @@ import 'Details_Page.dart';
 
 class SelectCities extends StatefulWidget {
   final String profession;
-  const SelectCities({required this.profession});
+  const SelectCities({super.key, required this.profession});
 
   @override
   State<SelectCities> createState() => _SelectCitiesState();

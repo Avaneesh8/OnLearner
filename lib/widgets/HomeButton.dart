@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class HomeButton extends StatelessWidget {
@@ -16,7 +18,7 @@ class HomeButton extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color.fromRGBO(250, 201, 69, .83),
               border: Border.all(
-                color: const Color(0xFAC945),
+                color: const Color(0x00fac945),
               ),
               borderRadius: const BorderRadius.all(Radius.circular(25))),
           constraints: BoxConstraints(

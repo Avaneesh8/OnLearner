@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:onlearner/provider/auth_provider.dart';
 import 'package:onlearner/screens/Authentication/Login.dart';
@@ -35,7 +37,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height*.1,
                         ),
-                        Text(
+                        const Text(
                           'ONLearner',
                           style: TextStyle(
                             color: Color.fromRGBO(161, 128, 48, 1),

@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 import '../widgets/drop_down_with_text.dart';
@@ -12,12 +12,7 @@ class DownloadNotes extends StatefulWidget {
   State<DownloadNotes> createState() => _DownloadNotesState();
 }
 
-final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-List<Map<String, dynamic>> pdfData = [];
-
 class _DownloadNotesState extends State<DownloadNotes> {
-  //String name =
-  //  selectedBoard + selectedClass + selectedSubject + selectedChapter;
   String selectedBoard = 'CBSE';
   List<String> boardOptions = [
     'CBSE',
@@ -169,7 +164,7 @@ class _DownloadNotesState extends State<DownloadNotes> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromRGBO(250, 201, 69, .83),
+                  backgroundColor: const Color.fromRGBO(250, 201, 69, .83),
                   padding: const EdgeInsets.all(16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35),

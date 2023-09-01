@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -165,7 +167,7 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                       color: const Color.fromRGBO(250, 201, 69, .83),
                       border: Border.all(
-                        color: const Color(0xFAC945),
+                        color: const Color(0x00fac945),
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(25))),
                   constraints: BoxConstraints(
