@@ -13,6 +13,9 @@
 
 Welcome to the OnLearner Flutter and Firebase Educational Application! This application has been professionally designed to facilitate user validation and personalized data entry, tailored to the needs of different professions. The primary focus of this application is to provide students with access to educational notes and establish a seamless connection with nearby home tutors. This README file provides an overview of the project, installation instructions, and guidelines for usage and contribution.
 
+![Onlearner](https://github.com/Avaneesh8/OnLearner/assets/94730915/09ae7a5a-209f-4a99-bc85-46ffd1ac4a3b)
+
+
 ## Features
 
 ### User Authentication
@@ -93,7 +96,7 @@ Contributions to this project are welcome. To contribute, follow these steps:
 
 Please ensure your code follows best practices, is well-documented, and passes any existing tests.
 
-## License![Frame 138](https://github.com/Avaneesh8/OnLearner/assets/94730915/387d7f34-3265-4199-b3e3-3843480ed4a7)
+## License
 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
