@@ -93,6 +93,7 @@ Contributions to this project are welcome. To contribute, follow these steps:
 
 Please ensure your code follows best practices, is well-documented, and passes any existing tests.
 
-## License
+## License![Frame 138](https://github.com/Avaneesh8/OnLearner/assets/94730915/387d7f34-3265-4199-b3e3-3843480ed4a7)
+
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
