@@ -18,7 +18,7 @@ Welcome to the OnLearner Flutter and Firebase Educational Application! This appl
 ### User Authentication
 - Secure user registration and login functionality using Firebase Authentication.
 - Passwordless authentication via email or phone number.
-- Role-based access control for different user types (e.g., student, tutor, admin).
+- Role-based access control for different user types (e.g., student, tutor).
 
 ### Personalized User Profiles
 - Users can create and edit their profiles with personal information.
@@ -48,9 +48,6 @@ Welcome to the OnLearner Flutter and Firebase Educational Application! This appl
 - **Authentication**:
   - Firebase Authentication for user authentication and authorization
   - Role-based access control (RBAC)
-
-- **Geolocation**:
-  - Location-based services for tutor search using Firebase GeoFire
 
 ## Installation
 
