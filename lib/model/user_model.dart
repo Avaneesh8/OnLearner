@@ -1,4 +1,5 @@
 // ignore_for_file: non_constant_identifier_names
+//hello
 
 class UserModel {
   String name;
@@ -33,7 +34,7 @@ class UserModel {
       phoneNumber: map['phoneNumber'] ?? '',
       createdAt: map['createdAt'] ?? '',
       Subject: map['subject'] ?? '',
-      city: map['city']??'',
+      city: map['city'] ?? '',
       profession: map['profession'],
     );
   }
@@ -48,8 +49,8 @@ class UserModel {
       "subject": Subject,
       "phoneNumber": phoneNumber,
       "created At": createdAt,
-      "city":city,
-      "profession":profession,
+      "city": city,
+      "profession": profession,
     };
   }
 }
