@@ -232,7 +232,7 @@ class _OtpScreenState extends State<OtpScreen> {
   }
   void sendPhoneNumber() {
     final ap = Provider.of<AuthProvider>(context, listen: false);
-    ap.signInWithPhone2(context, widget.number);
+    ap.signInWithPhone(context, widget.number);
   }
 }
 

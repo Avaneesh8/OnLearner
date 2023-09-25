@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:onlearner/model/user_model.dart';
 import 'package:onlearner/screens/Authentication/otp_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../utils/utils.dart';
 
 class AuthProvider extends ChangeNotifier {
@@ -117,7 +116,7 @@ class AuthProvider extends ChangeNotifier {
   // DATABASE OPERTAIONS
   Future<bool> checkExistingUser() async {
     DocumentSnapshot snapshot =
-        await _firebaseFirestore.collection("users").doc(_uid).get();
+    await _firebaseFirestore.collection("users").doc(_uid).get();
     if (snapshot.exists) {
       return true;
     } else {
